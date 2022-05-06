@@ -52,8 +52,8 @@ class AllSecStructures(ReporterInterface, MultiprocessingBase):
         self._equilibrium_concentrations = None
         #reports
         self._job_id = job_id
-        self._short_structs_filename = job_id[-20:] + '-structures-short.txt'
-        self._full_structs_filename  = job_id[-20:] + '-structures-full.txt'
+        self._short_structs_filename = job_id+'-structures-short.txt'
+        self._full_structs_filename  = job_id+'-structures-full.txt'
     #end def
     
     
@@ -79,7 +79,7 @@ class AllSecStructures(ReporterInterface, MultiprocessingBase):
         return structures,reactions
     #end def
     
-    @MultiprocessingBase.results_assembler_methd
+    @MultiprocessingBase.results_assembler_method
     def _structure_assembler(self, index, result, structures):
         structures[index] = result[0]
         self._reactions.update(result[1])

@@ -651,7 +651,7 @@ class DegenPrimerConfig(object):
             if not primer: continue
             if self.job_id: self.job_id += '-'
             if primer.id:
-                self.job_id += primer.id
+                self.job_id = primer.id
         self.job_id += '_%s' % str(hash(self))
         #set tmpdir if provided
         if self.tmp_dir:
